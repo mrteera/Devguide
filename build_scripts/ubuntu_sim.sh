@@ -21,7 +21,7 @@ echo "Installing Gazebo8"
 apt-get install protobuf-compiler libeigen3-dev libopencv-dev -y
 sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
 ## Setup keys
-wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+wget http://packages.osrfoundation.org/gazebo.key -O - | apt-key add -
 ## Update the debian database:
 apt-get update -y
 ## Install Gazebo8

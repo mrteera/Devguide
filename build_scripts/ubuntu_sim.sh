@@ -18,16 +18,16 @@ if [[ $wget_return_code -ne 0 ]]; then echo "Error downloading 'ubuntu_sim_commo
 
 # Gazebo simulator dependencies
 echo "Installing Gazebo8"
-sudo apt-get install protobuf-compiler libeigen3-dev libopencv-dev -y
-sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
+apt-get install protobuf-compiler libeigen3-dev libopencv-dev -y
+sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
 ## Setup keys
 wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 ## Update the debian database:
-sudo apt-get update -y
+apt-get update -y
 ## Install Gazebo8
-sudo apt-get install gazebo8 -y
+apt-get install gazebo8 -y
 ## For developers (who work on top of Gazebo) one extra package
-sudo apt-get install libgazebo8-dev -y
+apt-get install libgazebo8-dev -y
 
 # Go to the firmware directory
 cd $clone_dir/Firmware
